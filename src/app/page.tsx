@@ -6,7 +6,7 @@ import { Hero } from "@/sections/Hero";
 import { LogoTicker } from "@/sections/LogoTicker";
 import { Testimonials } from "@/sections/Testimonials";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <>
       <Header />
@@ -19,3 +19,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;
