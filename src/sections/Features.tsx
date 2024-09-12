@@ -14,7 +14,7 @@ import {
   ValueAnimationTransition,
 } from "framer-motion";
 
-interface Tabs {
+interface Tab {
   icon: string; 
   title: string; 
   isNew: boolean; 
@@ -23,7 +23,7 @@ interface Tabs {
   backgroundSizeX: number;
 }
 
-const tabs: Tabs[] = [
+const tabs: Tab[] = [
   {
     icon: "/assets/lottie/vroom.lottie",
     title: "User-friendly dashboard",
@@ -51,9 +51,8 @@ const tabs: Tabs[] = [
 ];
 
 const FeatureTab = (
-  props: (typeof tabs)[number] &
-    ComponentPropsWithoutRef<"div"> & { selected: boolean }
-) => {
+  props: Tab & ComponentPropsWithoutRef<"div"> & { selected: boolean }
+)  => {
   const tabRef = useRef<HTMLDivElement>(null);
   const dotLottieRef = useRef<DotLottieCommonPlayer>(null);
 
@@ -130,7 +129,7 @@ const FeatureTab = (
   );
 };
 
-export const Features = (tab: (typeof tabs)[number]) => {
+export const Features = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const backgroundPositionX = useMotionValue(tabs[0].backgroundPositionX);
@@ -156,13 +155,15 @@ export const Features = (tab: (typeof tabs)[number]) => {
 
     animate(
       backgroundPositionX,
-      (backgroundPositionX.get(), tabs[index].backgroundPositionX),
+      backgroundPositionX.get(), 
+      tabs[index].backgroundPositionX,
       animateOptions
     );
 
     animate(
       backgroundPositionY,
-      (backgroundPositionY.get(), tabs[index].backgroundPositionY),
+      backgroundPositionY.get(), 
+      tabs[index].backgroundPositionY,
       animateOptions
     );
   };
