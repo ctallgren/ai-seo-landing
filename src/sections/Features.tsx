@@ -14,7 +14,16 @@ import {
   ValueAnimationTransition,
 } from "framer-motion";
 
-const tabs = [
+interface Tabs {
+  icon: string; 
+  title: string; 
+  isNew: boolean; 
+  backgroundPositionX: number; 
+  backgroundPositionY: number; 
+  backgroundSizeX: number;
+}
+
+const tabs: Tabs[] = [
   {
     icon: "/assets/lottie/vroom.lottie",
     title: "User-friendly dashboard",
