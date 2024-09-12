@@ -127,7 +127,7 @@ const FeatureTab: React.FC<Tab & { selected: boolean; onClick: () => void }> = (
   );
 };
 
-export const Features: React.FC = () => {
+const Features: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const backgroundPositionX = useMotionValue(tabs[0].backgroundPositionX);
@@ -201,3 +201,6 @@ export const Features: React.FC = () => {
     </section>
   );
 };
+
+export default Features;
+
