@@ -179,10 +179,15 @@ export const Features: React.FC = () => {
         <div className="mt-10 flex flex-col lg:flex-row gap-3">
           {tabs.map((tab, tabIndex) => (
             <FeatureTab
-              {...tab}
+              key={tab.title}
+              icon={tab.icon}
+              title={tab.title}
+              isNew={tab.isNew}
+              backgroundPositionX={tab.backgroundPositionX}
+              backgroundPositionY={tab.backgroundPositionY}
+              backgroundSizeX={tab.backgroundSizeX}
               selected={selectedTab === tabIndex}
               onClick={() => handleSelectedTab(tabIndex)}
-              key={tab.title}
             />
           ))}
         </div>
