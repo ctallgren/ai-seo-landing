@@ -50,9 +50,7 @@ const tabs: Tab[] = [
   },
 ];
 
-const FeatureTab = (
-  props: Tab & ComponentPropsWithoutRef<"div"> & { selected: boolean }
-)  => {
+const FeatureTab: React.FC<Tab & { selected: boolean; onClick: () => void }> = (props) => {
   const tabRef = useRef<HTMLDivElement>(null);
   const dotLottieRef = useRef<DotLottieCommonPlayer>(null);
 
@@ -129,7 +127,7 @@ const FeatureTab = (
   );
 };
 
-export const Features = () => {
+export const Features: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const backgroundPositionX = useMotionValue(tabs[0].backgroundPositionX);
