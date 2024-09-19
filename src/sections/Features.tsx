@@ -153,8 +153,7 @@ export const Features: React.FC = () => {
 
     animate(
       backgroundPositionX,
-      backgroundPositionX.get(), 
-      tabs[index].backgroundPositionX,
+      [backgroundPositionX.get(), tabs[index].backgroundPositionX],
       animateOptions
     );
 
